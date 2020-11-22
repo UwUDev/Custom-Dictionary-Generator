@@ -1,12 +1,6 @@
 package me.uwu.gen.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.*;
 import java.util.Scanner;
 
 public class GenUtils {
@@ -42,13 +36,10 @@ public class GenUtils {
             e.printStackTrace();
         }
 
-        try {
-            FileWriter myWriter = new FileWriter("output.txt");
-            myWriter.write(sb.toString());
-            myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))) {
+            bw.append(sb);
+            bw.flush();
         } catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }

@@ -2,8 +2,6 @@ package me.uwu.gen;
 
 import me.uwu.gen.utils.GenUtils;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -150,7 +148,7 @@ public class Main {
             }
         }
 
-        System.out.println(sb.toString());
+        //System.out.println(sb.toString());
         GenUtils.saveResult(sb);
 
     }
